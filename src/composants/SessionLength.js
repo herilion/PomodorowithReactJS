@@ -2,11 +2,6 @@ import React from "react";
 import up from '../assets/up.svg';
 import down from '../assets/down.svg';
 import '../styles/style.css';
-
-const pause = () => {
-
-}
-
 const SessionLength = (props) => {
     return (
         <section>

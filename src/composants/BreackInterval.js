@@ -4,7 +4,16 @@ import down from '../assets/down.svg';
 import '../styles/style.css';
 const BreackInterval = (props) => {
     const decrease = () => {
+        if (props.breakInterval === 1) {
+            return;
+        }
+    }
 
+    const increase = () => {
+        if (props.breakInterval === 60) {
+            return;
+        }
+        props.increaseBreak();
     }
     return (
         <section>

@@ -12,13 +12,21 @@ class App extends React.Component {
       sessionLength: 25,
       timerMinute: 25
     }
+    this.onIncreaseBreakLength = this.onIncreaseBreakLength.bind(this);
+  }
+  onIncreaseBreakLength() {
+    this.setState((prevState) => {
+      return {
+        breakLength: prevState.breakLength + 1
+      }
+    })
   }
   render() {
     return (
       <main>
         <h2>Pomodoro Clock</h2>
         <section className='intervalLengthContainer'>
-          <BreackInterval breakInterval={this.state.breakLength} />
+          <BreackInterval breakInterval={this.state.breakLength} increaseBreak={this.onIncreaseBreakLength} />
           <SessionLength sessionLength={this.state.sessionLength} />
         </section>
         <Timer timerMinute={this.state.timerMinute} />

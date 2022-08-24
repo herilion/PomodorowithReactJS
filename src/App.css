@@ -4,8 +4,6 @@ main{
     height: 90vh;
     justify-content: center;
     align-items: center;
-    border: 10px solid red;
-    border-radius: 25px;
 }
 h4{
     text-align: center;
