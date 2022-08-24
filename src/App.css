@@ -4,6 +4,15 @@ main{
     height: 90vh;
     justify-content: center;
     align-items: center;
+    border: 10px solid red;
+    border-radius: 25px;
+}
+h4{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 h2{
     font-weight: 400;
@@ -11,7 +20,8 @@ h2{
 }
 .intervalContainer{
     display: flex;
-    margin: 0 20px;
+    margin: 0 40px;
+    align-items: center;
 }
 .intervalLengthContainer{
     display: flex;
@@ -20,4 +30,26 @@ img{
     padding: 5px 12px;
     margin: 0 10px;
     height: 25px;
+    outline: none;
+}
+.intervalLength{
+    font-size: 2rem;
+    margin: 0 10px;
+}
+.timerContainer{
+   border: 3px solid royalblue; 
+   margin-top: 40px;
+   border-radius: 25px;
+   width: 300px;
+   text-align: center;
+   box-shadow: 0 2px 4px rgb(65, 225, 212);
+   padding: 30px;
+}
+.timer{
+    font-size: 2rem;
+}
+.timerAction{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
 }

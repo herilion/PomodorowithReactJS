@@ -2,4 +2,5 @@ img{
     width: 40px;
     border: 5px solid rgb(131, 47, 47);
     border-radius: 10px;
+    cursor: pointer;
 }
