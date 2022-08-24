@@ -7,6 +7,7 @@ const BreackInterval = (props) => {
         if (props.breakInterval === 1) {
             return;
         }
+        props.decreaseBreak();
     }
 
     const increase = () => {
