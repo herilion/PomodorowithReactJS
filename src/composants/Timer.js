@@ -4,8 +4,8 @@ import pause from "../assets/pause.svg";
 import rotate from "../assets/rotate.svg"
 
 class Timer extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             isSession: true,
             timerSecond: 0,
@@ -25,7 +25,7 @@ class Timer extends React.Component {
     decreaseTimer() {
         switch (this.state.timerSecond) {
             case 0:
-                // this.props.updateTimerMinute()
+                this.props.updateTimerMinute()
                 this.setState({
                     timerSecond: 59
                 })
@@ -44,11 +44,12 @@ class Timer extends React.Component {
         clearInterval(this.state.intervalId);
     }
     reset() {
-        this.pause();
-        this.props.resetTimer();
-        this.setState({
-            timerSecond: 0
-        })
+        // this.pause();
+        // this.props.resetTimer();
+        // this.setState({
+        //     timerSecond: 0
+        // })
+        window.location.reload(false);
     }
     render() {
         return (
