@@ -8,9 +8,47 @@ class Timer extends React.Component {
         super();
         this.state = {
             isSession: true,
-            timerSecond: 0
+            timerSecond: 0,
+            intervalId: 0
+        };
+        this.play = this.play.bind(this);
+        this.pause = this.pause.bind(this);
+        this.reset = this.reset.bind(this);
+        this.decreaseTimer = this.decreaseTimer.bind(this);
+    }
+    play() {
+        let intervalId = setInterval(this.decreaseTimer, 1000);
+        this.setState({
+            intervalId: intervalId
+        })
+    }
+    decreaseTimer() {
+        switch (this.state.timerSecond) {
+            case 0:
+                // this.props.updateTimerMinute()
+                this.setState({
+                    timerSecond: 59
+                })
+                break;
+            default:
+                this.setState((prevState) => {
+                    return {
+                        timerSecond: prevState.timerSecond - 1
+                    }
+                })
+                break;
 
         }
+    }
+    pause() {
+        clearInterval(this.state.intervalId);
+    }
+    reset() {
+        this.pause();
+        this.props.resetTimer();
+        this.setState({
+            timerSecond: 0
+        })
     }
     render() {
         return (
@@ -27,9 +65,9 @@ class Timer extends React.Component {
                     </span>
                 </section>
                 <section className="timerAction">
-                    <img src={play} alt="" />
-                    <img src={rotate} alt="" />
-                    <img src={pause} alt="" />
+                    <img src={play} alt="" onClick={this.play} />
+                    <img src={rotate} alt="" onClick={this.reset} />
+                    <img src={pause} alt="" onClick={this.pause} />
 
                 </section>
             </section>
@@ -38,3 +76,5 @@ class Timer extends React.Component {
     }
 }
 export default Timer;
+
+// 57:55
