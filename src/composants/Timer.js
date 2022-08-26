@@ -17,10 +17,16 @@ class Timer extends React.Component {
         this.decreaseTimer = this.decreaseTimer.bind(this);
     }
     play() {
+        // if (this.props.timerMinute > 0) {
         let intervalId = setInterval(this.decreaseTimer, 1000);
         this.setState({
             intervalId: intervalId
         })
+        // }
+        // else if (this.props.timerMinute == 0 && this.props.timerSecond == 0) {
+        //     this.pause()
+        // }
+
     }
     decreaseTimer() {
         switch (this.state.timerSecond) {
@@ -47,9 +53,9 @@ class Timer extends React.Component {
         // this.pause();
         // this.props.resetTimer();
         // this.setState({
-        //     timerSecond: 0
+        //     timerSecond: 0,
         // })
-        window.location.reload(false);
+        window.location.reload()
     }
     render() {
         return (
@@ -71,7 +77,7 @@ class Timer extends React.Component {
                     <img src={pause} alt="" onClick={this.pause} />
 
                 </section>
-            </section>
+            </section >
 
         );
     }

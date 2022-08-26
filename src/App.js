@@ -80,6 +80,7 @@ class App extends React.Component {
   render() {
     return (
       <main>
+        <div className='menulog'> powered by Heritier LIONGE</div>
         <h2>Pomodoro Clock</h2>
         <section className='intervalLengthContainer'>
           <BreackInterval breakInterval={this.state.breakLength}
